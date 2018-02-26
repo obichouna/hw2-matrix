@@ -19,17 +19,12 @@ def ident(matrix):
 
 #m1 * m2 -> m2
 def matrix_mult(m1, m2):
-    m = [[] for x in range(0,4)]
-    m3 = []
-    row = 0
-    for r in range(0,4):
-        for c in range(0,len(m2[0])):
-            sum = 0
-            for i in range(0,len(m1[0])):
-                prod = m1[i][r] * m2[c][i]
-                sum += prod
-            m[r].append(sum)
-    m2[:] = list(m)
+	ans = new_matrix(rows = len(m1[0]), cols = len(m2))
+	for r in range(len(m1[0])):
+		for c in range(len(m2)):
+			for i in range(len(m1)):
+				ans[r][c] += (m1[r][i] * m2[i][c])
+	return ans
 
 
 
