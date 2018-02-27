@@ -23,7 +23,7 @@ def matrix_mult(m1, m2):
 	for r in range(len(m1[0])):
 		for c in range(len(m2)):
 			for i in range(len(m1)):
-				ans[r][c] += (m1[r][i] * m2[i][c])
+				new[r][c] += (m1[r][i] * m2[i][c])
 	return new
 
 
